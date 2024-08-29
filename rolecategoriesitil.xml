@@ -1,0 +1,57 @@
+<root>
+   <name>RoleCategoriesItil</name>
+   <key>rolecategoriesitil</key>
+   <!-- stable, beta, development, alpha, ... -->
+   <state>stable</state>
+   <logo>https://raw.githubusercontent.com/pluginsGLPI/rolecategoriesitil/master/{LNAME}.png</logo>
+   <description>
+      <short>
+         <!-- Add as many lang tag you want -->
+         <en>RoleCategoriesItil GLPI plugin.</en>
+         <fr>Plugin GLPI RoleCategoriesItil</fr>
+      </short>
+      <long>
+         <!-- Add as many lang tag you want -->
+         <en>A long description for RoleCategoriesItil GLPI plugin.</en>
+         <fr>Un description longue pour le plugin GLPI RoleCategoriesItil</fr>
+      </long>
+   </description>
+   <homepage>https://github.com/pluginsGLPI/rolecategoriesitil</homepage>
+   <download>https://github.com/pluginsGLPI/rolecategoriesitil/releases</download>
+   <issues>https://github.com/pluginsGLPI/rolecategoriesitil/issues</issues>
+   <readme>https://github.com/pluginsGLPI/rolecategoriesitil/blob/master/README.md</readme>
+   <authors>
+      <!-- Add as many author tag you want -->
+      <author>Teclib'</author>
+   </authors>
+   <versions>
+      <!-- Add as many version tag you want -->
+      <version>
+         <num>0.0.1</num>
+         <!-- Add as many compatibility tag you want -->
+         <compatibility>9.4</compatibility>
+         <compatibility>9.3</compatibility>
+         <compatibility>9.2</compatibility>
+      </version>
+   </versions>
+   <langs>
+      <!-- Add as many lang tag you want -->
+      <lang>en_GB</lang>
+      <lang>fr_FR</lang>
+   </langs>
+   <license>GPL V3+</license>
+   <!--tags>
+      <en>
+         <tag>One tag</tag>
+         <tag>Another tag</tag>
+      </en>
+      <fr>
+         <tag>Un tag</tag>
+         <tag>Un autre tag</tag>
+      </fr>
+   </tags-->
+   <!--screenshots>
+      <screenshot>https://github.com/pluginsGLPI/fields/raw/master/screenshot.png</screenshot>
+      <screenshot>https://github.com/pluginsGLPI/fields/raw/master/screenshot2.png</screenshot>
+   </screenshots-->
+</root>
