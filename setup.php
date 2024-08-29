@@ -64,8 +64,8 @@ function plugin_version_rolecategoriesitil()
         'name'           => 'RoleCategoriesItil',
         'version'        => PLUGIN_ROLECATEGORIESITIL_VERSION,
         'author'         => '<a href="#">Yahin RA\'</a>',
-        'license'        => '',
-        'homepage'       => '',
+        'license'        => 'GNUv3',
+        'homepage'       => 'https://github.com/romannadym/RoleCategoriesItil',
         'requirements'   => [
             'glpi' => [
                 'min' => PLUGIN_ROLECATEGORIESITIL_MIN_GLPI_VERSION,
