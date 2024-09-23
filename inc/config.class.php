@@ -76,7 +76,7 @@ class PluginRolecategoriesitilConfig extends CommonDBTM {
       echo "You do not have permission to view ITIL categories.";
     }
 
-    echo "<tr class='center'><td colspan='4'>".Html::submit(__('Сохранить'), [
+    echo "<tr class='center'><td colspan='4'>".Html::submit(__('Keep'), [
       'name'  => 'update',
       'class' => 'btn btn-primary mt-2'
       ])."</td></tr>";
