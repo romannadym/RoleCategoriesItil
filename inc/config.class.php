@@ -4,7 +4,7 @@ class PluginRolecategoriesitilConfig extends CommonDBTM {
   static private $_instance = NULL;
   static $rightname         = 'profile';
   function getName($with_comment=0) {
-    return __('Категории ITIL', 'rolecategoriesitil');
+    return _n('ITIL category', 'ITIL categories', $with_comment);
   }
 
   static function getInstance() {
@@ -19,9 +19,6 @@ class PluginRolecategoriesitilConfig extends CommonDBTM {
   }
   static function showConfigForm($item) {
 
-    $yesnoall = [0 => __('No'),
-    1 => __('First'),
-    2 => __('All')];
     if (Session::haveRight("profile", READ)) {
       // Создаем экземпляр класса Profile
       $profile = new Profile();
@@ -42,13 +39,14 @@ class PluginRolecategoriesitilConfig extends CommonDBTM {
       return false;
     }
     $config =  new self();
-    $config->showFormHeader();
-    echo "<tr class='tab_bg_1'>";
+    $config->showFormHeader(['no_header'=>true]);
+    echo Html::hidden('_glpi_csrf_token', ['value' => Session::getNewCSRFToken()]);
+    echo "<thead><tr class='tab_bg_1'>";
     echo "<th width='2%'>".__('ID')."</th>";
-    echo "<th   width='10%'>".__('Категории ITIL')."</th>";
-    echo "<th  class='center' width='3%'>".__('Access')."</th>";
+    echo "<th   width='10%'>"._n('ITIL category', 'ITIL categories', 0)."</th>";
+    echo "<th  class='center' width='3%'>".__('Visibility')."</th>";
     echo "<th width='2%'>".__('Level')."</th>";
-    echo "</tr>";
+    echo "</tr></thead>";
     echo Html::hidden('profile_id', ['value' => $profile_id]);
     // Убедитесь, что пользователь имеет права на просмотр категорий ITIL
     if (Session::haveRight('itilcategory', READ)) {
@@ -78,15 +76,16 @@ class PluginRolecategoriesitilConfig extends CommonDBTM {
       echo "You do not have permission to view ITIL categories.";
     }
 
-    echo "<div class='center'>".Html::submit(__('Сохранить'), [
+    echo "<tr class='center'><td colspan='4'>".Html::submit(__('Сохранить'), [
       'name'  => 'update',
       'class' => 'btn btn-primary mt-2'
-      ])."</div>";
+      ])."</td></tr>";
       echo "</form>";
       echo <<< SCRIPT
-          <script type="text/javascript">
-          $('form[name="asset_form"]').find('table').addClass('search-results table card-table table-hover table-striped');
-          </script>
+      <script type="text/javascript">
+      $('form[name="asset_form"]').find('table').removeClass('tab_cadre_fixe');
+      $('form[name="asset_form"]').find('table').addClass('table table-hover');
+      </script>
       SCRIPT;
       return false;
     }

@@ -14,6 +14,10 @@ class PluginRolecategoriesitilItilcategories
          $fields = $config->find(['profile_id'=>self::getUserProfileId(),'active'=>1]);
          $itil = Dropdown::getDropdownValue($_POST,FALSE);
          $itilMod = [];
+         if(!isset($itil['results'][1]['children']))
+         {
+           return;
+         }
          $itilChildren = $itil['results'][1]['children'];
          foreach($itilChildren AS $key => $value)
          {
@@ -29,7 +33,7 @@ class PluginRolecategoriesitilItilcategories
          $itil['count'] = count($itilMod);
          echo json_encode($itil);
          exit;
-         file_put_contents(GLPI_ROOT.'/tmp/buffer.txt',PHP_EOL.PHP_EOL. json_encode($fields,JSON_UNESCAPED_UNICODE), FILE_APPEND);
+      //   file_put_contents(GLPI_ROOT.'/tmp/buffer.txt',PHP_EOL.PHP_EOL. json_encode($fields,JSON_UNESCAPED_UNICODE), FILE_APPEND);
        }
        else if (!defined('GLPI_ROOT'))
        {
